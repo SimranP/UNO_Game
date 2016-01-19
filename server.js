@@ -1,11 +1,11 @@
 var http  = require('http');
 var express = require('express'); 
+var app = express();
 
-req_handeller = function(req,res){
-    if(req.url == '/')
-    res.redirect('./index.html');
-};
+app.get('/',function(req,res){
+    res.end('hello');
+})
 
-var server = http.createServer(req_handeller);
+var server = http.createServer(app);
 server.listen(process.env.OPENSHIFT_NODEJS_PORT || 8080,process.env.OPENSHIFT_NODEJS_IP||'127.0.0.1');
 
