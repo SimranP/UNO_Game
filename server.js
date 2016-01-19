@@ -8,7 +8,6 @@ var server = http.createServer(function(req,res){
 		all_game.push(game);
 		req.game = game;
 	};
-	// if(req.url == '/restartGame') game.end();
 	var controller = require('./lib/controller')(all_game);
 	return controller(req,res);
 });
