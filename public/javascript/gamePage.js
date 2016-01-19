@@ -200,6 +200,8 @@ var drawCard = function(){
 			if(table.player.myTurn){
 				$('#changeTurn').toggleClass('hide');
 				$('.drawPile').toggleClass('hide');
+				$('#changeTurn').disabled = 'false';
+				$('.drawPile').disabled = 'true';
 				makeRequest('POST','drawCard','drawCard',false);
 			};
 	    }
@@ -209,6 +211,8 @@ var drawCard = function(){
 var changeTurn = function(){
 	$('#changeTurn').toggleClass('hide');
 	$('.drawPile').toggleClass('hide');
+	$('#changeTurn').disabled = 'true';
+	$('.drawPile').disabled = 'false';
 	makeRequest('POST','changeTurn','changeTurn',false);
 };
 
