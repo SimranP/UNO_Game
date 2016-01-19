@@ -1,23 +1,34 @@
 {
-  "name": "uno_game",
+  "name": "OpenShift-Sample-App",
   "version": "1.0.0",
-  "description": "",
-  "main": "lib/gameServer.js",
+  "description": "OpenShift Sample Application",
   "scripts": {
     "test": "mocha",
     "min": "mocha -R min --recursive",
     "watch": "mocha -R min --watch --recursive"
   },
+  "keywords": [
+    "OpenShift",
+    "Node.js",
+    "application",
+    "openshift"
+  ],
+  "author": {
+    "name": "OpenShift",
+    "email": "ramr@example.org",
+    "url": "http://www.openshift.com/"
+  },
+  "homepage": "http://www.openshift.com/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SimranP/UNO_Game.git"
+    "url": "https://github.com/openshift/origin-server"
   },
-  "author": "viraj_jitu_simran_madhuri_ashwin",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/SimranP/UNO_Game/issues"
+
+  "engines": {
+    "node": ">= 0.6.0",
+    "npm": ">= 1.0.0"
   },
-  "homepage": "https://github.com/SimranP/UNO_Game#readme",
+
   "dependencies": {
     "body-parser": "^1.14.2",
     "chai": "^3.4.1",
@@ -31,5 +42,9 @@
   "devDependencies": {
     "sinon": "^1.17.2",
     "supertest": "^1.1.0"
-  }
+  },
+  "bundleDependencies": [],
+
+  "private": true,
+  "main": "server.js"
 }
