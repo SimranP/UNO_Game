@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>join UNO</title>
+	<script type = "text/javascript" src="./javascript/jquery-2.1.4.min.js" > </script>
+	<script type="text/javascript" src = "./javascript/generateCards.js"></script>
+	<script type="text/javascript" src = "./javascript/gamePage.js"></script>
+	<link rel="stylesheet" href="./css/gamePage.css">
+</head>
+<body>
+<div id="container">
+ 	<div id="header">
+ 		<div id="mainHeader">
+ 			<h1>UNO !!!</h1>
+ 		</div>
+ 	</div>
+ 	<hr>
+ 	<div id="gameBoard">
+ 		<div id="dashBoard">
+ 			<div id="scoreHeading">Other players details</div>
+ 			<div id="otherPlayers"></div>
+ 		</div>
+		<h2 id="showTurn"></h2>
+ 		<div id="drawPile">
+ 			<button class="drawPile"><img src="./drawPile.jpg"/></button>
+ 		</div>
+ 		<div id="discardPile"></div>
+	 	<div id="wildCards" class="hide" >
+			<select id = "chooseColor">
+		  		<option value="green">Green</option>
+		  		<option value="red">Red</option>
+		  		<option value="yellow">Yellow</option>
+		  		<option value="blue">Blue</option>
+			</select>
+			<button id="OK">OK</button>
+			<button id="Cancel">Cancel</button>
+		</div>
+
+		<button id="changeTurn" class="hide" >
+			Change Turn
+		</button>
+
+ 		<div id="playerHand" class="playerHand">				
+ 		</div>
+ 	</div>
+ 	<div id="history">
+ 	</div>
+	<div id="sayUno">
+		<button class="sayUno">UNO</button>
+	</div>
+
+ </div> 
+ </body>
+</html>

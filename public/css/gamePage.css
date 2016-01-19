@@ -1,0 +1,246 @@
+	
+#container{
+	font-family: serif;
+}
+
+#header{
+	background: #63717b;
+	padding-left:43%;
+	height: 10%;
+}
+
+#mainHeader{
+	color:#ffffff;
+	padding: 3px;
+	font-size: 20px;
+}
+
+#gameBoard{
+	width:80%;
+	border-right: 1px solid black;
+	height:auto;
+	float: left;
+}
+
+#history{
+	border: 1px solid black;
+	overflow: scroll;
+	width: 270px;
+	height: 430px;
+	margin:auto;
+	float: right;
+	position: relative;
+	color:#63717b;
+	font-size: 20px;
+	line-height: 200%;
+
+}
+
+#dashBoard{
+	background: #ededed;
+	border: 1px solid black;
+	width: 35%;
+	height: 350px;
+	color:black;
+	font-family: serif;
+}
+
+#dashBoard th{
+	text-align: center;
+	width:200px;
+	font-size:25px;
+}
+
+#dashBoard td{
+	text-align: center;
+	width:200px;
+	font-size:22px;
+}
+
+#scoreHeading{
+	text-align: center;
+	font-size: 35px;
+	color: #A73D25;
+}
+
+
+#showScore th{
+	font-size: 25px;
+	padding:10px;
+}
+
+#showScore td{
+	padding:10px;
+	text-align: center;
+	font-size: 24px;
+}
+
+#showTurn{
+	font-family: cursive;
+	float: left;
+	margin-top: -25%;
+	margin-left: 47%;
+	width: 200px;
+	height: 20px;
+	font-size: 30px;
+	font-style: bold;
+}
+
+#discardPile{
+ 	width: 20%;
+	height: 250px;
+	margin-left: 46%;
+	margin-top: -18%;
+}
+
+#drawPile{
+	margin-left:80%;
+	margin-top: -15%;
+} 
+
+#playerHand {
+	overflow-x: scroll;
+	width:92%;
+	height: 225px;
+	margin-left: 30px;
+	cursor:pointer;
+}
+
+#playerHand::-webkit-scrollbar {
+    width: 0px;
+}
+#playerHand::-webkit-scrollbar-track {
+    background: #cccccc; 
+}
+#playerHand::-webkit-scrollbar-thumb {
+    background: gray;
+}
+
+
+
+#sayUno{
+	margin-top: 450px;
+	position: absolute;
+	margin-left: 85%;
+	border-radius: 200px;
+	font-family: sans-serif;
+}
+
+.sayUno{
+	font-size: 20px;
+}
+
+#sayUno :hover{
+	font-size: 30px;
+	background: black;
+	color:#ffffff;
+	box-shadow: 5px 5px 5px 5px grey;
+}
+
+.sayUno{
+	border-radius: 200px;
+	height: 150px;
+	width: 150px;
+}
+
+.hide{
+	visibility: hidden;
+}
+
+#wildCards{
+	width: 20%;
+	height: 50px;
+	margin: auto;
+}
+
+#wildCards select {
+	width: 50%;
+	font-size: 20px;
+}
+
+#wildCards button{
+	width:50px;
+	height: 22px;
+	border-radius: 20%;
+}
+
+#changeTurn{
+	width:145px;
+	height: 215px;
+	background: grey;
+	float: right;
+	margin-right: 8%;
+	margin-top:-21%;
+	font-size: 20px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.show{
+	visibility: visible;
+}
+
+#showScoreBoard{
+	font-size: 30px;
+	margin: auto;
+	font-family: serif;
+	width:20%;
+}
+
+#scoreContainer{
+	width: 100%;
+	height:100%;
+	border: 1px solid black;
+}
+
+
+#allScores{
+	width: 40%;
+	height: 330px;
+	float: right;
+}
+
+
+#first{
+	background: url("../winner-trophy.gif");
+	margin-left:20%;
+	float: left;
+	margin-top: 14%;
+    color: #000000;
+    font: 80px Arial, serif;
+    text-align: center;
+    width:400px;
+    height: 330px;
+}
+
+#playAgain{
+	float: right;
+	margin-top: 50%;
+	width:10%;
+	height:60px;
+}
+
+#restart{
+	font-size: 20px;
+	color: white;
+	border-radius:20px;
+	width: 100%;
+	height:100%;
+	background-color: green;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
