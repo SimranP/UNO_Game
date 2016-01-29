@@ -2,6 +2,7 @@ var http = require('http');
 var Game = require('./lib/game');
 var all_game = [];
 var server = http.createServer(function(req,res){
+	
 	if(req.url == '/createNewGame') {
 		if(req.cookie)
 			return ;
