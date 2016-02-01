@@ -23,69 +23,44 @@ describe('routes',function(){
 	describe('get /provideIndexForm',function(){
 		it('should give give login fields',function(done){
 			games[0].hasPlayers = sinon.stub().returns(false);
+			games[0].hasVacancy = sinon.stub().returns(true);
+			games[0].id = "gameNo:2";
+			games[0].getplayersLimit = sinon.stub().returns(3);
+			games[0].getPlayerNames = sinon.stub().returns(["yu","ty"]);
 			request(controller)
 				.get('/provideIndexForm')
 				.expect(200)
 				.expect(/Enter your name/,done);
 		});
 	});
-	describe('post /addPlayer',function(){
-		it('should send players who all are playing to the host player',function(done){
-			game.setLimit = sinon.spy();
+	describe("/joinGame",function(){
+		it("should allow the player to join a particular game",function(done){
+			var game = games[0];
+			game.provideCroupier = sinon.stub().returns({});
 			game.hasVacancy = sinon.stub().returns(true);
 			game.register = sinon.spy();
-			game.getPlayerNames = sinon.stub().returns(['jitendra']);
-
+			games[0].getPlayerNames =sinon.stub().returns(['simmo']);
+			var croupier = game.provideCroupier();
+			croupier.players = [{name:'simmo',id:'520',myTurn:true,hand:[{name:9,color:'red'}],saidUno:false}];
 			request(controller)
-				.post('/addPlayer')
-				.send('name=jitendra&playersLimit=2')
-				.set('Cookie',['name=12345667'])
-				.expect(200)
-				.expect('Game is going on between : <br>jitendra')
-				.end(function(){
-					assert.ok(game.setLimit.calledWith(2));
-					assert.ok(game.register.calledOnce);
-					done();
-				});
-		});
-		it('should send players who all are playing to the other players',function(done){
-			game.setLimit = sinon.spy();
-			game.hasVacancy = sinon.stub().returns(true);
-			game.register = sinon.spy();
-			game.getPlayerNames = sinon.stub().returns(['jitendra']);
-			request(controller)
-				.post('/addPlayer')
-				.send('name=sachdeva')
-				.set('Cookie',['name=12345668'])
-				.expect(200)
-				.expect('Game is going on between : <br>jitendra',done);
-		});
+				.post('/joinGame')
+				.send('name=simmo')
+				.set('Cookie',['info=name=520&game=568'])
+				.expect(/Game is going on(.*)simmo/)
+				.expect(200,done);
+		});	
 	});
 	describe('post /indexRefreshData',function(){
 		it('should send an object if player limit reached',function(done){
-			game.setLimit = sinon.stub().withArgs(1);
-			game.hasVacancy = sinon.stub().returns(false);
-			game.contains = sinon.stub().returns(true);
-			game.getPlayerNames =sinon.stub().returns(['ram prakash']);
+			games[0].setLimit = sinon.stub().withArgs(1);
+			games[0].hasVacancy = sinon.stub().returns(false);
+			games[0].contains = sinon.stub().returns(true);
+			games[0].getPlayerNames =sinon.stub().returns(['ram prakash']);
 			request(controller)
 				.post('/indexRefreshData')
 				.expect(200)
 				.set('Cookie',['name=12345668'])
 				.expect(/{"reachedPlayersLimit":true,"url":"gamePage.html"}/,done);
-		});
-	});
-	describe('post /addPlayer',function(){
-		it('should send game is running message',function(done){
-			game.setLimit = sinon.stub().withArgs(1);
-			game.hasVacancy = sinon.stub().returns(false);
-			game.contains = sinon.stub().returns(false);
-			game.register = sinon.spy();
-			request(controller)
-				.post('/addPlayer')
-				.send('name=arun')
-				.set('Cookie',['name=12345669'])
-				.expect(200)
-				.expect(/sorry game is going on please wait for game to get over./,done);
 		});
 	});
 	describe('get /provideTable',function(){
@@ -109,6 +84,7 @@ describe('routes',function(){
 		it("should throw a card from players hand",function(done){
 			game.provideCroupier = sinon.stub().returns({});
 			game.getMoves = sinon.stub().returns("nothing");
+			game.contains = sinon.stub().returns(true);
 			var croupier = game.provideCroupier();
 			croupier.makeMove = sinon.spy();
 			croupier.discardedPile = [];
@@ -126,6 +102,7 @@ describe('routes',function(){
 			game.provideCroupier = sinon.stub().returns({});
 			game.addRecentMove = sinon.stub().returns("nothing");
 			game.getMoves = sinon.spy();
+			game.contains = sinon.stub().returns(true);
 			var croupier = game.provideCroupier();
 			croupier.makeMove = sinon.spy();
 			croupier.discardedPile = [];
@@ -142,6 +119,7 @@ describe('routes',function(){
 		it("should make the respective players saidUno true",function(done){
 			game.provideCroupier = sinon.stub().returns({});
 			game.addRecentMove = sinon.stub().returns("nothing");
+			game.contains = sinon.stub().returns(true);
 			var croupier = game.provideCroupier();
 			croupier.players = [{name:'simmo',id:'420',myTurn:true,hand:[{name:9,color:'red'}],saidUno:false}];
 			croupier.sayUno = function(){};
@@ -156,6 +134,7 @@ describe('routes',function(){
 		it("should give 2 cards to the respective player",function(done){
 			game.provideCroupier = sinon.stub().returns({});
 			game.addRecentMove = sinon.stub().returns("nothing");
+			game.contains = sinon.stub().returns(true);
 			var croupier = game.provideCroupier();
 			croupier.players = [{name:'simmo',id:'420',myTurn:true,hand:[{name:9,color:'red'}],saidUno:false}];
 			croupier.catchUno = sinon.stub().returns(false);
@@ -170,6 +149,7 @@ describe('routes',function(){
 		it("should display the scores",function(done){
 			game.provideCroupier = sinon.stub().returns({});
 			game.addRecentMove = sinon.stub().returns("nothing");
+			game.contains = sinon.stub().returns(true);
 			var croupier = game.provideCroupier();
 			croupier.players = [{name:'simmo',id:'420',myTurn:true,hand:[{name:9,color:'red'}],points:9,saidUno:false}];
 			croupier.countPoints = sinon.spy();

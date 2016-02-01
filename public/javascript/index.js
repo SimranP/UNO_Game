@@ -1,11 +1,13 @@
 var refreshData = function(){
 	$.post('indexRefreshData','data=indexRefreshData',function(data,status){
 		 if (status == 'success') {
-	    	var response = JSON.parse(data);
-		 	if(response.reachedPlayersLimit == true)
-		 		window.location.href = response.url+"";
-	    	else
-				$('#players').html(response.data);
+		 	if(data){
+		    	var response = JSON.parse(data);
+			 	if(response.reachedPlayersLimit == true)
+			 		window.location.href = response.url+"";
+		    	else
+					$('#players').html(response.data);
+			}
 	    }
 	});
 };
@@ -14,10 +16,12 @@ var refreshData = function(){
 var joinGameWithID = function(request){
 	$.post('joinGame',request,function(data,status){
 		if(status == 'success') {
-			$('#players').html(data);
-			var interval = setInterval(function(){
-				refreshData();
-			},1000);
+			window.location.href = "loadingPage.html";
+			// $('#players').html(data);
+			// var interval = setInterval(function(){
+			// 	refreshData();
+			// },1000);
+
 	    }
 	});
 };
@@ -35,12 +39,8 @@ var joinGame = function(gameId){
 
 var postPlayerInformation = function(request){
 	$.post('createNewGame',request,function(data,status){
-		if(status == 'success') {
-			$('#players').html(data);
-			var interval = setInterval(function(){
-				refreshData();
-			},1000);
-	    }
+		if(status == 'success') 
+			window.location.href = "loadingPage.html";
 	});
 };
 
