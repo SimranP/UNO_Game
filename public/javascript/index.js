@@ -17,11 +17,6 @@ var joinGameWithID = function(request){
 	$.post('joinGame',request,function(data,status){
 		if(status == 'success') {
 			window.location.href = "loadingPage.html";
-			// $('#players').html(data);
-			// var interval = setInterval(function(){
-			// 	refreshData();
-			// },1000);
-
 	    }
 	});
 };
@@ -59,9 +54,12 @@ var createNewGame = function(){
 var printForm = function(){
 	$.get('provideIndexForm','data=provideIndexForm',function(data,status){
 		 if (status == 'success') {
-		 	$('#inputForm').html(data.indexForm);
+		 	$('#inputForm').html($('#inputForm').html()+data.indexForm);
 			$('#loadGame').click(createNewGame);
-			$('#joinForm').html(data.joinForm);
+			if(!data.joinForm){
+				$('#openJoinForm').hide();
+			};
+			$('#joinForm').html($('#joinForm').html()+data.joinForm);
 			var button = document.querySelector('#join');
 			button.onclick = function(){
 				joinGame(button.value);
@@ -70,15 +68,15 @@ var printForm = function(){
 	});
 };
 
-
-
-
 // var checkKey = function(event){
 // 	if(event.keyCode == '13' && document.activeElement.id != 'join')
 // 		submitName();		
 // };
 $(document).ready(function(){
 	printForm();
+	$('#openJoinForm').click(function(){
+		$("#joinDiv").slideToggle("slow");
+	});
 	// $(document).keypress(checkKey);
 });
 
