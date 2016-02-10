@@ -1,35 +1,23 @@
-<html>
-	<head>
-		<title> Loading UNO</title>
-		<script type = "text/javascript" src="./javascript/jquery-2.1.4.min.js" > </script>
-		<link rel="stylesheet" type="text/css" href="./css/loadingPage.css" />
-		<script type = "text/javascript" src="./javascript/loadingPage.js" > </script>
-	</head>
-	<body>
-
-		<div class="preloader">
-			<div class="preloader-box">
-				<div>W</div>
-				<div>A</div>
-				<div>I</div>
-				<div>T</div>
-				<div>I</div>
-				<div>N</div>
-				<div>G</div>
-				<div>!!</div>
-				<div>F</div>
-				<div>O</div>
-				<div>R</div>
-				<div> </div>
-				<div>P</div>
-				<div>L</div>
-				<div>A</div>
-				<div>Y</div>
-				<div>E</div>
-				<div>R</div>
-				<div>S</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Loading</title>
+	<link rel="stylesheet" href="./css/index.css">
+	<script src="./javascript/jquery-2.1.4.min.js"></script>
+	<script src="./javascript/chooseGame.js" ></script>
+</head>
+<body>
+	<div id="container">
+		<div id="login">
+			<h2 class="header loadingHeaders">Create Game </h2><br><br><br>
+			<input type="text" class = "input loadingPage"  id="playersLimit" placeholder = "Enter No of Players(1-8)">
+			</input>
+			<button class='btn loadingPage' id = "start"> Start </button>
+			<div class='joinGame'>
+				<h2 class="header loadingHeaders">Join Game </h2><br><br><br>
 			</div>
 		</div>
-		<div id='joinedPlayers'> </div>
-	</body>
+	</div>
+</body>
 </html>

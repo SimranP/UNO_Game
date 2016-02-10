@@ -1,31 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>UNO_GAME</title>
-	<script type = "text/javascript" src="./javascript/jquery-2.1.4.min.js" > </script>
-	<script type = "text/javascript" src="./javascript/index.js" > </script>
-	<link rel="stylesheet" type="text/css" href="./css/index.css" />
+	<meta charset="UTF-8">
+	<title>UNO</title>
+	<link rel="stylesheet" href="./css/index.css">
+	<script src="./javascript/jquery-2.1.4.min.js"></script>
+	<script src="./javascript/index.js" ></script>
 </head>
 <body>
-	<div id="container">
-		<div id="superHeading">
-			<p> Welcome to online UNO</p>
-			<h4>We do not stop playing because we grow  old, we grow old because we stop playing...!!</h4>
-			<div id="menu-bar">
-					<a href="rules.html" target ="blank">About Us</a>
-					<a href="rules.html" target ="blank">How to Play??</a>
+	<div id = "container">
+		<div class = "header">UNO</div>
+		<div id = "login">
+			<div class="manual_login">
+				<input type="text" class = "input" id = "user" placeholder = "Enter your Name"></input><br>
+				<button class='btn' id='loginBtn'><b>L</b>ogin</button>
 			</div>
-		<hr />
-		</div>
-		<div id="login">
-			<h1>Create A Game </h1>
-			<div id="inputForm"></div>
-			<button id='openJoinForm'> Join A Game </button>
-			<div id="joinDiv">
-				<h1>You Can Join The Following Games</h1>
-				<div id="joinForm" ></div>
+			<div id="auto_login">
+				<button class="btn"><a href="./auth/facebook">Login With <u><b>Facebook</b></u></a></button>
+				<button class="btn" id="gmailLogin" > <a href="./auth/google">Login With <u><b>Gmail</b></u></a></button>
 			</div>
 		</div>
-	</div>
+
 </body>
 </html>

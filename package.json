@@ -31,13 +31,14 @@
     "body-parser": "^1.14.2",
     "chai": "^3.4.1",
     "cookie-parser": "^1.4.0",
-    "express": "~3.4.4",
+    "express": "~3.3.4",
     "lodash": "^3.10.1",
     "log": "^1.4.0",
     "log.js": "0.0.0",
     "mocha": "^2.3.4",
     "passport": "^0.3.2",
-    "passport-facebook": "^2.1.0"
+    "passport-facebook": "^2.1.0",
+    "passport-google-oauth2": "^0.1.6"
   },
   "devDependencies": {
     "sinon": "^1.17.2",

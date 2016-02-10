@@ -1,0 +1,41 @@
+body{
+	font-family: serif;
+}
+
+#container {
+	height: 800px;
+	width: 80%;
+	border: 1px solid black; 
+	margin:0 auto;
+}
+
+#header{
+	text-align: center;
+	font-size: 100px;
+	font-weight: bold;
+}
+
+.input{
+	margin-left: 37%;
+	margin-top: 5%;
+	text-align: center;
+	font-size: 25px;
+	height: 5%;
+	width: 25%;
+}
+
+.btn{
+	height: 5%;
+	width: 21%;
+	margin: 0 auto;
+	margin-top: 5%;
+}
+
+#welcome{
+	height: 100%;
+	width: 60%;
+	padding: 10px;
+	margin-left: 36.2%;
+	
+}
+

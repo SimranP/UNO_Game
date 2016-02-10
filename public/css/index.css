@@ -1,102 +1,116 @@
-#superHeading{
+body{
+	font-family: serif;
+	font-size: 20px;
+}
+
+#container {
+	height: 800px;
+	width: 80%;
+	margin:0 auto;
+}
+
+#login{
+	height: 30%;
+	width: 55%;
+	padding: 10px;
+	margin:0 auto;
+	margin-left:23%;
+	margin-top: 5%;
+}
+
+.manual_login{
+	border-right:1px solid black;
+	width: 48.5%;
+	height: 100%;
+	float: left;
+}
+
+#auto_login{
+	width:50%;
+	height: 100%;
+	float: right;
+}
+
+#auto_login  button{
+	margin-left:15%;
+}
+
+.manual_login button,input{
+	margin-left:10%;
+}
+
+
+.header{
 	text-align: center;
-	background: #476972;
+	font-size: 100px;
+	color:#7D827F;
+	text-shadow: 1px 1px 1px #7D827F;
+}
+
+.input{
+	margin-top: 15%;
+	text-align: center;
+	font-size: 16px;
+	height: 50px;
+	width: 255px;
+	background:#dfded4;
+	border: none;
+}
+
+.btn{
+	height: 50px;
+	width: 255px;
+	margin-top: 15%;
+	border: none;
+	font-size: 15px;
 	color:white;
+	background: #7D827F;
 }
 
-#superHeading p{
+ .btn a{
+	 color:white;
+	 decoration:none;
+ }
+
+.btn:hover{
+	cursor: pointer;
+	box-shadow:2px 5px 5px #a8a8a8;
+}
+
+#createGame{
+	border: 1px solid black;
+	width:50%;
 	margin:0 auto;
-	font-size: 50px;
-	font-family: serif;
+	margin-top: 10%;
 }
 
-#superHeading h4{
-	font-size: 25px;
-	margin:1%;
-	font-weight: normal;
-	font-family: serif;
-}
-
-#menu-bar {
-	margin-top: -2%;
-	text-align: right;
-	font-size: 23px;
-}
-#menu-bar a {
-	color:lightgray;
-	padding: 4px;
-	text-decoration: none;
-}
-
-#menu-bar a:hover{
-	box-shadow: 2px 2px 2px 2px white;
-	color:black;
-	background: white;
-}
-
-#login {
-	margin:0 auto;
-	margin-top:3%;
-	height: 700px;
-	width: 60%;
-	text-align: center;
-}
-
-#inputForm{
-	width: 100%;
-	height: 35%;
-	text-align: left;
-}
-
-#login > h1 {
-	font-size: 35px;
-	font-weight: 100;
-}
-
-#inputForm input,button{
- 	width: 40%;
- 	height: 20%;
- 	font-size: 18px;
-	margin: 1%;
-}
-
-#joinDiv, #openJoinForm {
-    padding: 5px;
-    text-align: center;
-}
-
-#openJoinForm {
-	height: 10%;
+.loadingPage{
+	margin-left: 15px;
 	width: 40%;
 }
 
-#joinDiv {
-    padding: 50px;
-    display: none;
-	height: 100%;
-}
-
-#joinForm {
-	width: 100%;
-	height: 35%;
+.loadingHeaders{
+	font-size:30px;
+	margin:0 auto;
 	text-align: left;
-}
-
-#joinForm input,button{
- 	width: 40%;
- 	height: 20%;
- 	font-size: 18px;
-	margin: 1%;
-}
-
-#playerDetails{
-	float: left;
-	margin-top: -12%;
-	margin-left: 50%;
-	font-size: 20px;
-	overflow: scroll;
-	text-align: center;
+	padding: 14px;
+	padding-top:30px;
+	margin-bottom: -20%;
 }
 
 
+.joinGame {
+	height:100%;
+	width: 80%;
+}
 
+.game {
+	margin-left: 3%;
+	margin-top: 10%;
+	width: 100%;
+	height: 80%;
+}
+
+.game button{
+	margin-top: 5%;
+}
