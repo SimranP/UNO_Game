@@ -7,7 +7,7 @@ var matchCard = function(card,discardedPile){
 	||card.color == discardedPile.color
 	||card.name == discardedPile.name ;
 }
-	
+
 var generateCards = function(hand){
 	return hand.map(function(card){
 		return '<td value='+JSON.stringify(card) +'>' +generateCardsImage(card.color,card.name)+ '</td>'
@@ -62,9 +62,18 @@ var giveBehaviourToAllCards = function(table,interval){
 
 var generateOtherPlayer = function(otherPlayers){
 	var playersTable = otherPlayers.map(function(player){
-		return '<tr><td>'+player.name+'</td><td>'+player.hand+'</td><td>'+player.saidUno+'</td></tr>';
+		var url = 'http://gridgum.com/templates/wrapkit/images/dummy/unknown-profile.jpg';
+		// checkURLPromise = $.getJSON(url);
+
+		// checkURLPromise.fail(function(){
+			// url = 'https://graph.facebook.com/'+player.socialNetworkId+'/picture?type=normal';
+		// });
+			return '<tr><td><img src='+url+' alt="" /></td>  <td> Name = '+
+			player.name+'<br> Cards = '+player.hand+'<br> Said Uno = '+player.saidUno+'</td></tr>';
+
 	}).join('');
-	playersTable = "<table><th>Player's name</th><th>Cards</th><th>Said Uno</th>"+playersTable+"</table>";
+
+	playersTable = "<table>"+playersTable+"</table>";
 	return playersTable;
 };
 
@@ -98,7 +107,7 @@ var restartGame = function(){
 		 if (status == 'success') {
 		 	window.location.href = url+"";
 	    }
-	});	
+	});
 };
 
 var checkWinner = function(players,interval){
@@ -115,7 +124,7 @@ var checkWinner = function(players,interval){
   				$('#Scores').html(showPoints(JSON.parse(result)).scores);
 			}
 		}
-	});	
+	});
 };
 
 var scoreBoardHTML = function(){
@@ -164,7 +173,7 @@ var catchUno = function(playerName){
 				else
 					alert("you can't catch "+playerName + " now" );
 	        }
-	    }	
+	    }
 	});
 }
 
@@ -225,7 +234,7 @@ var generateTable = function(interval){
 				if(data != JSON.stringify(table)){
 					table = JSON.parse(data);
 	        		showTable(table,interval);
-				}	  
+				}
 	        }
 	    }
 	});

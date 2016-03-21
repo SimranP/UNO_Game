@@ -8,47 +8,60 @@
 	<link rel="stylesheet" href="./css/gamePage.css">
 </head>
 <body>
-<div id="container">
- 	<div id="header">
- 		<div id="mainHeader">
- 			<h1>UNO !!!</h1>
- 		</div>
- 	</div>
- 	<hr>
- 	<div id="gameBoard">
- 		<div id="dashBoard">
- 			<div id="scoreHeading">Other players details</div>
- 			<div id="otherPlayers"></div>
- 		</div>
-		<h2 id="showTurn"></h2>
- 		<div id="drawPile">
- 			<button class="drawPile"><img src="./drawPile.jpg"/></button>
- 		</div>
- 		<div id="discardPile"></div>
-	 	<div id="wildCards" class="hide" >
-			<select id = "chooseColor">
-		  		<option value="green">Green</option>
-		  		<option value="red">Red</option>
-		  		<option value="yellow">Yellow</option>
-		  		<option value="blue">Blue</option>
-			</select>
-			<button id="OK">OK</button>
-			<button id="Cancel">Cancel</button>
-		</div>
 
-		<button id="changeTurn" class="hide" >
-			Change Turn
-		</button>
+<div class="container">
 
- 		<div id="playerHand" class="playerHand">				
- 		</div>
- 	</div>
- 	<div id="history">
- 	</div>
-	<div id="sayUno">
-		<button class="sayUno">UNO</button>
+	<header id="header" class="header group">
+	<h1 class="logo">Online Uno</h1>
+	<nav class="mainNav">
+		<ul>
+			<li><a href="#Fork">Fork Us</a></li>
+			<li><a href="#contact">Contact</a></li>
+		</ul>
+	</nav>
+</header>
+
+<div class="gameBoard">
+	<div id="dashBoard">
+		<div id="otherPlayers"></div>
 	</div>
+<div class="gameShow">
+		<table>
+		<tr>
+			<td>
+				<div class="drawPile" id="drawPile" ><br>Draw <br> Card</div>
+				<div id="changeTurn" class="hide"><br>Change<br>Turn </div>
+			</td>
+			<td>
+				<div id="discardPile"></div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div id="wildCards" class="hide" >
+					<select id = "chooseColor">
+						<option value="green">Green</option>
+						<option value="red">Red</option>
+						<option value="yellow">Yellow</option>
+						<option value="blue">Blue</option>
+					</select>
+					<button id="OK">OK</button>
+					<button id="Cancel">Cancel</button>
+				</div>
+			</td>
+		</tr>
+	</table>
+	</div>
+</div>
 
- </div> 
+	<div id="playerHand" class="playerHand">
+
+</div>
+
+</div>
+
+
+
+
  </body>
 </html>
